@@ -18,10 +18,12 @@ public class TaskApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		userService.createUser();
-		userService.getUserDetails("user1234");
-		userService.listUsers();
-		userService.updateUser("user1234","name:maduranga");
-		userService.deleteUser("user1234");
+		String user = userService.createUser();
+		System.out.println(user);
+		String userUpdate=userService.getUserDetails("user1234");
+		System.out.println(userUpdate);
+//		userService.listUsers();
+//		userService.updateUser("user1234","name:maduranga");
+//		userService.deleteUser("user1234");
 	}
 }

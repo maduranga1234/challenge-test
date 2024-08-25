@@ -16,7 +16,7 @@ public class UserService {
     // Create User
 
     String userJson="{\n" +
-            "    \"uid\": \"user123\",\n" +
+            "    \"uid\": \"user1234\",\n" +
             "    \"email\": \"user@example.com\",\n" +
             "    \"given_name\": \"John\",\n" +
             "    \"middle_name\": \"Michael\",\n" +
@@ -44,9 +44,7 @@ public class UserService {
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) {
-                throw new IOException("Unexpected code " + response);
-            }
+
             return response.body().string();
         }
     }
