@@ -10,7 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TaskApplication implements CommandLineRunner {
 
 	@Autowired
-	UserService userService;
+	private UserService userService;  // Make sure userService is private
+
 	public static void main(String[] args) {
 		SpringApplication.run(TaskApplication.class, args);
 	}
@@ -18,7 +19,9 @@ public class TaskApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		userService.createUser();
-
-
+		userService.getUserDetails("user1234");
+		userService.listUsers();
+		userService.updateUser("user1234","name:maduranga");
+		userService.deleteUser("user1234");
 	}
 }
